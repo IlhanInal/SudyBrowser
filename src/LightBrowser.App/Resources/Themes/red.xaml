@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Crimson & Bordeaux Theme: Derin bordo gövde ve canlı kırmızı vurgular -->
+    <SolidColorBrush x:Key="BarBrush" Color="#2A0B13" />
+    <SolidColorBrush x:Key="BoxBrush" Color="#4A1521" />
+    <SolidColorBrush x:Key="BoxShadowBrush" Color="#1A050A" />
+    <SolidColorBrush x:Key="BoxHoverBrush" Color="#5E1B2A" />
+    <SolidColorBrush x:Key="FieldBrush" Color="#380F19" />
+    <SolidColorBrush x:Key="FieldFocusBrush" Color="#4D1422" />
+    <SolidColorBrush x:Key="TextBrush" Color="#FCE8EC" />
+    <SolidColorBrush x:Key="SubtleTextBrush" Color="#C48E9B" />
+    <SolidColorBrush x:Key="IconBrush" Color="#E5A3B1" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#E62744" />
+    <SolidColorBrush x:Key="ActiveTabEdgeBrush" Color="#FF3352" />
+    <SolidColorBrush x:Key="PopupBrush" Color="#24080F" />
+    <SolidColorBrush x:Key="HomeTitleBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ScrimBrush" Color="#80120206" />
+    <SolidColorBrush x:Key="TileBrush" Color="#26FFFFFF" />
+    <SolidColorBrush x:Key="TileHoverBrush" Color="#3DFFFFFF" />
+    <SolidColorBrush x:Key="TileBorderBrush" Color="#33FFFFFF" />
+    <SolidColorBrush x:Key="TileTextBrush" Color="#FCE8EC" />
+</ResourceDictionary>

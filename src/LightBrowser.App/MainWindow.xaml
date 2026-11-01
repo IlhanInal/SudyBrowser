@@ -1,0 +1,32 @@
+<Window x:Class="LightBrowser.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:LightBrowser.App.Views"
+        xmlns:controls="clr-namespace:LightBrowser.App.Controls"
+        Title="Tarayici" Width="1200" Height="780" MinWidth="640" MinHeight="360"
+        WindowStyle="None" ResizeMode="CanResize" AllowsTransparency="False"
+        FontFamily="{StaticResource UiFont}"
+        Background="{DynamicResource BarBrush}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="6" GlassFrameThickness="0"
+                      CornerRadius="0" UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
+    <Window.InputBindings>
+        <KeyBinding Key="T" Modifiers="Control" Command="{Binding NewTabCommand}" />
+        <KeyBinding Key="W" Modifiers="Control" Command="{Binding CloseActiveTabCommand}" />
+        <KeyBinding Key="F5" Command="{Binding ReloadCommand}" />
+        <KeyBinding Key="R" Modifiers="Control" Command="{Binding ReloadCommand}" />
+        <KeyBinding Key="Left" Modifiers="Alt" Command="{Binding GoBackCommand}" />
+        <KeyBinding Key="Right" Modifiers="Alt" Command="{Binding GoForwardCommand}" />
+    </Window.InputBindings>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <views:TopBarView x:Name="TopBar" Grid.Row="0" />
+
+        <controls:WebViewHostPanel Grid.Row="1" />
+    </Grid>
+</Window>

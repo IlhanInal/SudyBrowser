@@ -1,0 +1,71 @@
+<UserControl x:Class="LightBrowser.App.Views.TabStripView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:LightBrowser.App.Controls"
+             SizeChanged="OnSizeChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- MaxWidth is kept in sync with the available width (see OnSizeChanged) so the tabs shrink
+             instead of pushing the "+" button out of view. -->
+        <ListBox x:Name="TabList" Grid.Column="0"
+                 ItemsSource="{Binding Tabs}"
+                 SelectedItem="{Binding SelectedTab, Mode=TwoWay}"
+                 ItemContainerStyle="{StaticResource TabListBoxItem}"
+                 Background="Transparent" BorderThickness="0" VerticalAlignment="Top"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 AutomationProperties.Name="Sekmeler">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:TabStripPanel MaxTabWidth="148" MinTabWidth="56" Spacing="16" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:Name="TabRoot" AutomationProperties.Name="{Binding Title}" ToolTip="{Binding Title}"
+                          Margin="12,0,6,0" Background="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Globe glyph sits under the favicon and shows through until/unless the icon loads. -->
+                        <Grid Width="18" Height="18" VerticalAlignment="Center">
+                            <TextBlock Text="&#xE774;" FontFamily="{StaticResource IconFont}" FontSize="14"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       Foreground="{DynamicResource IconBrush}" />
+                            <Image Source="{Binding FaviconUrl}" Width="18" Height="18" />
+                        </Grid>
+                        <TextBlock Grid.Column="1" Text="{Binding Title}" TextTrimming="CharacterEllipsis"
+                                   Margin="12,0,4,0" VerticalAlignment="Center" />
+                        <Button x:Name="CloseButton" Grid.Column="2" Content="&#xE711;"
+                                Style="{StaticResource TabCloseButton}"
+                                Command="{Binding DataContext.CloseTabCommand, RelativeSource={RelativeSource AncestorType=ListBox}}"
+                                CommandParameter="{Binding}"
+                                ToolTip="Sekmeyi kapat (Ctrl+W)" AutomationProperties.Name="Sekmeyi kapat" />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsActive}" Value="True">
+                            <Setter TargetName="CloseButton" Property="Opacity" Value="1" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=ListBoxItem}}" Value="True">
+                            <Setter TargetName="CloseButton" Property="Opacity" Value="1" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- New tab: right next to the last tab. -->
+        <Button x:Name="NewTabButton" Grid.Column="1" Content="&#xE710;" Style="{StaticResource BoxButton}"
+                Margin="16,2.5,0,0" VerticalAlignment="Top"
+                Command="{Binding NewTabCommand}"
+                ToolTip="Yeni sekme (Ctrl+T)" AutomationProperties.Name="Yeni sekme" />
+    </Grid>
+</UserControl>

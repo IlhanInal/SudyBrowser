@@ -1,0 +1,44 @@
+<UserControl x:Class="LightBrowser.App.Views.NavigationBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Height="29">
+        <!-- Capsule behind the back / forward / reload buttons. -->
+        <Border Width="124" HorizontalAlignment="Left" CornerRadius="14.5"
+                Background="{DynamicResource BoxBrush}" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Center">
+            <Button Content="&#xE72B;" Style="{StaticResource IconButton}"
+                    Command="{Binding GoBackCommand}"
+                    ToolTip="Geri (Alt+Sol ok)" AutomationProperties.Name="Geri" />
+            <Button Content="&#xE72A;" Style="{StaticResource IconButton}"
+                    Command="{Binding GoForwardCommand}"
+                    ToolTip="İleri (Alt+Sağ ok)" AutomationProperties.Name="İleri" />
+            <Button Content="&#xE72C;" Style="{StaticResource IconButton}"
+                    Command="{Binding ReloadCommand}"
+                    ToolTip="Yenile (F5)" AutomationProperties.Name="Yenile" />
+        </StackPanel>
+
+        <!-- Address field; its thick left edge is the gray crescent from the design. -->
+        <Border Style="{StaticResource UrlPill}" Margin="98,0,0,0" CornerRadius="14.5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="AddressBox" Margin="14,0,8,0"
+                         Style="{StaticResource PlainTextBox}"
+                         FontWeight="Bold" FontSize="12.5"
+                         Text="{Binding ActiveTab.AddressText, UpdateSourceTrigger=PropertyChanged}"
+                         AutomationProperties.Name="Adres çubuğu" ToolTip="Adres çubuğu (Ctrl+L)">
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding NavigateCommand}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+
+                <!-- Bookmark ribbon from the design. Bookmarks themselves are not implemented yet. -->
+                <Path Grid.Column="1" Data="M0,0 L12,0 L12,16 L6,11.5 L0,16 Z" Fill="{DynamicResource IconBrush}"
+                      Margin="0,0,16,0" VerticalAlignment="Center" ToolTip="Yer imleri (yakında)" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

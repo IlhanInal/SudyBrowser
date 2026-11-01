@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Midnight Dark Theme: Derin kömür/füme tonlar ve dengeli gri kontrastı -->
+    <SolidColorBrush x:Key="BarBrush" Color="#1E1E22" />
+    <SolidColorBrush x:Key="BoxBrush" Color="#2A2A30" />
+    <SolidColorBrush x:Key="BoxShadowBrush" Color="#0D0D10" />
+    <SolidColorBrush x:Key="BoxHoverBrush" Color="#36363D" />
+    <SolidColorBrush x:Key="FieldBrush" Color="#25252B" />
+    <SolidColorBrush x:Key="FieldFocusBrush" Color="#161619" />
+    <SolidColorBrush x:Key="TextBrush" Color="#EDEDF0" />
+    <SolidColorBrush x:Key="SubtleTextBrush" Color="#9696A0" />
+    <SolidColorBrush x:Key="IconBrush" Color="#C5C5CE" />
+    <SolidColorBrush x:Key="AccentBrush" Color="#3B82F6" />
+    <SolidColorBrush x:Key="ActiveTabEdgeBrush" Color="#fcfcfc" />
+    <SolidColorBrush x:Key="PopupBrush" Color="#18181B" />
+    <SolidColorBrush x:Key="HomeTitleBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="ScrimBrush" Color="#9909090B" />
+    <SolidColorBrush x:Key="TileBrush" Color="#1AFFFFFF" />
+    <SolidColorBrush x:Key="TileHoverBrush" Color="#2EFFFFFF" />
+    <SolidColorBrush x:Key="TileBorderBrush" Color="#24FFFFFF" />
+    <SolidColorBrush x:Key="TileTextBrush" Color="#EDEDF0" />
+</ResourceDictionary>

@@ -1,0 +1,25 @@
+<UserControl x:Class="LightBrowser.App.Controls.WebViewHostPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:views="clr-namespace:LightBrowser.App.Views">
+    <Grid ClipToBounds="True">
+        <!-- All tab views stay in the visual tree (stacked in one cell); only the active, navigated one is visible,
+             so background tabs keep their state and the WebView2 controls are never re-parented. -->
+        <ItemsControl ItemsSource="{Binding Tabs}" IsTabStop="False">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding View}" IsTabStop="False"
+                                    Visibility="{Binding WebViewVisibility}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- Native home page for tabs that have not navigated yet (their web view is hidden, so nothing overlaps it). -->
+        <views:HomePageView Visibility="{Binding ActiveTab.IsHome, Converter={StaticResource BoolToVisibility}}" />
+    </Grid>
+</UserControl>
