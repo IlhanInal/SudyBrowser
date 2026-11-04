@@ -4,7 +4,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace LightBrowser.App.Views;
+namespace SudyBrowser.App.Views;
 
 public partial class TopBarView : UserControl
 {

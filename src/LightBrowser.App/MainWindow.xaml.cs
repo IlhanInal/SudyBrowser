@@ -1,8 +1,8 @@
 using System.Windows;
 using System.Windows.Input;
-using LightBrowser.App.ViewModels;
+using SudyBrowser.App.ViewModels;
 
-namespace LightBrowser.App;
+namespace SudyBrowser.App;
 
 public partial class MainWindow : Window
 {

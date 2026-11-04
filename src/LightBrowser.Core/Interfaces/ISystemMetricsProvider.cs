@@ -1,6 +1,6 @@
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Core.Interfaces;
+namespace SudyBrowser.Core.Interfaces;
 
 public interface ISystemMetricsProvider
 {

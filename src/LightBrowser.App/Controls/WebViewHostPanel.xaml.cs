@@ -1,6 +1,6 @@
 using System.Windows.Controls;
 
-namespace LightBrowser.App.Controls;
+namespace SudyBrowser.App.Controls;
 
 public partial class WebViewHostPanel : UserControl
 {

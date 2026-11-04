@@ -1,9 +1,9 @@
 using System.Text.Json;
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 using Microsoft.Extensions.Logging;
 
-namespace LightBrowser.Infrastructure.Storage;
+namespace SudyBrowser.Infrastructure.Storage;
 
 /// <summary>Stores recent sites as a small JSON file in the app data folder. Failures are logged, never thrown.</summary>
 public sealed class JsonRecentSitesStore : IRecentSitesStore

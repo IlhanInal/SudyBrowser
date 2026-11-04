@@ -1,22 +1,23 @@
 using System.Windows;
-using LightBrowser.App.Services;
-using LightBrowser.App.ViewModels;
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Policies;
-using LightBrowser.Core.Services;
-using LightBrowser.Infrastructure;
-using LightBrowser.Infrastructure.Logging;
-using LightBrowser.Infrastructure.Monitoring;
-using LightBrowser.Infrastructure.Storage;
-using LightBrowser.Infrastructure.WebView2;
+using SudyBrowser.App.Services;
+using SudyBrowser.App.ViewModels;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Policies;
+using SudyBrowser.Core.Services;
+using SudyBrowser.Infrastructure;
+using SudyBrowser.Infrastructure.Logging;
+using SudyBrowser.Infrastructure.Monitoring;
+using SudyBrowser.Infrastructure.Storage;
+using SudyBrowser.Infrastructure.Suggestions;
+using SudyBrowser.Infrastructure.WebView2;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace LightBrowser.App;
+namespace SudyBrowser.App;
 
 public partial class App : Application
 {
-    private const string ErrorCaption = "LightBrowser";
+    private const string ErrorCaption = "SudyBrowser";
 
     private ServiceProvider? _services;
     private ILogger<App>? _logger;
@@ -69,6 +70,18 @@ public partial class App : Application
         services.AddSingleton<ISystemMetricsProvider, WindowsSystemMetricsProvider>();
         services.AddSingleton<IRecentSitesStore, JsonRecentSitesStore>();
         services.AddSingleton<RecentSites>();
+        services.AddSingleton<IBookmarkStore, JsonBookmarkStore>();
+        services.AddSingleton<BookmarkService>();
+        services.AddSingleton<ISettingsStore, JsonSettingsStore>();
+        services.AddSingleton<IHistoryStore, SqliteHistoryStore>();
+        services.AddSingleton(SearchSuggestionOptions.Google);
+        services.AddSingleton<ISearchSuggestionProvider, HttpSearchSuggestionProvider>();
+        services.AddSingleton<IFaviconFetcher, HttpFaviconFetcher>();
+        services.AddSingleton<FaviconCacheService>();
+        services.AddSingleton<SuggestionService>();
+        services.AddSingleton<HistoryRecorder>();
+        services.AddSingleton<OmniboxViewModel>();
+        services.AddSingleton<DownloadsViewModel>();
         services.AddSingleton<ThemeService>();
         services.AddSingleton<StatusViewModel>();
         services.AddSingleton<SettingsViewModel>();

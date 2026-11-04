@@ -1,7 +1,7 @@
-using LightBrowser.Core.Models;
-using LightBrowser.Core.Policies;
+using SudyBrowser.Core.Models;
+using SudyBrowser.Core.Policies;
 
-namespace LightBrowser.Tests;
+namespace SudyBrowser.Tests;
 
 public class AddressParserTests
 {

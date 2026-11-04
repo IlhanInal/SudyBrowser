@@ -1,8 +1,8 @@
-using LightBrowser.Core.Interfaces;
+using SudyBrowser.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Web.WebView2.Core;
 
-namespace LightBrowser.Infrastructure.WebView2;
+namespace SudyBrowser.Infrastructure.WebView2;
 
 /// <summary>Creates the single shared <see cref="CoreWebView2Environment"/> and a host per tab.</summary>
 public sealed class WebView2HostFactory : IWebViewHostFactory

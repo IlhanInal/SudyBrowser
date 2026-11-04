@@ -1,8 +1,8 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 using Microsoft.Extensions.Logging;
 
-namespace LightBrowser.Core.Services;
+namespace SudyBrowser.Core.Services;
 
 /// <summary>
 /// Owns the tab list and the active tab, and is the single place where tabs are created and destroyed.

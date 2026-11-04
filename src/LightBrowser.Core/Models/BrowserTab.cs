@@ -1,6 +1,6 @@
-using LightBrowser.Core.Interfaces;
+using SudyBrowser.Core.Interfaces;
 
-namespace LightBrowser.Core.Models;
+namespace SudyBrowser.Core.Models;
 
 /// <summary>A browser tab. Owns exactly one <see cref="IWebViewHost"/> and disposes it with the tab.</summary>
 public sealed class BrowserTab : IDisposable
@@ -12,6 +12,7 @@ public sealed class BrowserTab : IDisposable
     {
         _host = host;
         _host.StateChanged += OnHostStateChanged;
+        _host.DownloadStarted += OnHostDownloadStarted;
     }
 
     public Guid Id { get; } = Guid.NewGuid();
@@ -21,6 +22,8 @@ public sealed class BrowserTab : IDisposable
     public NavigationState State => _host.State;
 
     public event EventHandler<NavigationState>? StateChanged;
+
+    public event EventHandler<IDownloadOperation>? DownloadStarted;
 
     public Task NavigateAsync(Uri uri) => _host.NavigateAsync(uri);
 
@@ -39,8 +42,12 @@ public sealed class BrowserTab : IDisposable
 
         _disposed = true;
         _host.StateChanged -= OnHostStateChanged;
+        _host.DownloadStarted -= OnHostDownloadStarted;
         _host.Dispose();
     }
 
     private void OnHostStateChanged(object? sender, NavigationState state) => StateChanged?.Invoke(this, state);
+
+    private void OnHostDownloadStarted(object? sender, IDownloadOperation operation) =>
+        DownloadStarted?.Invoke(this, operation);
 }

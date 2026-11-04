@@ -1,6 +1,6 @@
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Core.Interfaces;
+namespace SudyBrowser.Core.Interfaces;
 
 /// <summary>
 /// Adapter around a single web view (one per tab). Hides the concrete engine from Core and ViewModels.
@@ -14,6 +14,8 @@ public interface IWebViewHost : IDisposable
     NavigationState State { get; }
 
     event EventHandler<NavigationState>? StateChanged;
+
+    event EventHandler<IDownloadOperation>? DownloadStarted;
 
     Task NavigateAsync(Uri uri);
 

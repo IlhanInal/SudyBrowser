@@ -4,10 +4,10 @@
 
 ```mermaid
 flowchart TD
-    App["LightBrowser.App (WPF, MVVM, DI kökü)"] --> Core
-    App --> Infra["LightBrowser.Infrastructure (WebView2, günlükleme)"]
-    Infra --> Core["LightBrowser.Core (modeller, arayüzler, politikalar, TabManager)"]
-    Tests["LightBrowser.Tests"] --> Core
+    App["SudyBrowser.App (WPF, MVVM, DI kökü)"] --> Core
+    App --> Infra["SudyBrowser.Infrastructure (WebView2, günlükleme)"]
+    Infra --> Core["SudyBrowser.Core (modeller, arayüzler, politikalar, TabManager)"]
+    Tests["SudyBrowser.Tests"] --> Core
 ```
 
 - **Core** WPF ve WebView2'ye bağımlı değildir (yalnızca `Microsoft.Extensions.Logging.Abstractions`). Tüm tarayıcı mantığı burada test edilebilir.

@@ -1,9 +1,15 @@
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.App.Models;
+namespace SudyBrowser.App.Models;
 
-/// <summary>One of the fixed shortcut tiles on the home page; <see cref="Site"/> is null for an empty slot.</summary>
-public sealed record ShortcutSlot(RecentSite? Site)
+/// <summary>One of the home page shortcut tiles backed by a bookmark; <see cref="Bookmark"/> is null if empty.</summary>
+public sealed record ShortcutSlot(BookmarkEntry? Bookmark)
 {
-    public bool HasSite => Site is not null;
+    public bool HasSite => Bookmark is not null;
+
+    public string Title => Bookmark?.Title ?? string.Empty;
+
+    public string Url => Bookmark?.Url ?? string.Empty;
+
+    public string FaviconUrl => Bookmark?.FaviconUrl ?? string.Empty;
 }

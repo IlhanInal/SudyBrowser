@@ -1,4 +1,4 @@
-namespace LightBrowser.Core.Interfaces;
+namespace SudyBrowser.Core.Interfaces;
 
 /// <summary>Owns the shared browser engine environment and creates per-tab hosts from it.</summary>
 public interface IWebViewHostFactory

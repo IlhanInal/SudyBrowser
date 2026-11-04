@@ -1,7 +1,7 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Tests;
+namespace SudyBrowser.Tests;
 
 internal sealed class FakeWebViewHost : IWebViewHost
 {
@@ -14,6 +14,8 @@ internal sealed class FakeWebViewHost : IWebViewHost
     public List<Uri> Navigations { get; } = new();
 
     public event EventHandler<NavigationState>? StateChanged;
+
+    public event EventHandler<IDownloadOperation>? DownloadStarted;
 
     public Task NavigateAsync(Uri uri)
     {
@@ -38,6 +40,9 @@ internal sealed class FakeWebViewHost : IWebViewHost
         State = state;
         StateChanged?.Invoke(this, state);
     }
+
+    public void RaiseDownload(IDownloadOperation operation) =>
+        DownloadStarted?.Invoke(this, operation);
 
     public void Dispose() => IsDisposed = true;
 }

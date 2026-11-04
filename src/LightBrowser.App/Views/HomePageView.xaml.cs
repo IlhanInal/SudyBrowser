@@ -1,6 +1,6 @@
 using System.Windows.Controls;
 
-namespace LightBrowser.App.Views;
+namespace SudyBrowser.App.Views;
 
 public partial class HomePageView : UserControl
 {

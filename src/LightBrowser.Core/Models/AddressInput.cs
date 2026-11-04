@@ -1,4 +1,4 @@
-namespace LightBrowser.Core.Models;
+namespace SudyBrowser.Core.Models;
 
 public enum AddressInputKind
 {

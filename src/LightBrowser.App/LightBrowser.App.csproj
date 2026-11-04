@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Resource Include="Resources\Backgrounds\*.jpg" />
+    <Resource Include="Resources\Icons\*.png" />
+    <Resource Include="Resources\Icons\*.svg" />
   </ItemGroup>
 
   <ItemGroup>

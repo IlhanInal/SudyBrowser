@@ -1,4 +1,4 @@
-namespace LightBrowser.Core.Models;
+namespace SudyBrowser.Core.Models;
 
 /// <summary>Immutable snapshot of a tab's navigation status as reported by its web view.</summary>
 public sealed record NavigationState(

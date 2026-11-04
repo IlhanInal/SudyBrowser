@@ -1,7 +1,7 @@
 using System.Windows.Input;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.App.ViewModels;
+namespace SudyBrowser.App.ViewModels;
 
 /// <summary>Presentation state for one <see cref="BrowserTab"/>.</summary>
 public sealed class TabViewModel : ObservableObject, IDisposable

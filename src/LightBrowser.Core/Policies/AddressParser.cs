@@ -1,7 +1,7 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Core.Policies;
+namespace SudyBrowser.Core.Policies;
 
 /// <summary>
 /// Decides whether address bar text is a URL or a search query.

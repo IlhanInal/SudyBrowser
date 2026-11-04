@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Infrastructure.Monitoring;
+namespace SudyBrowser.Infrastructure.Monitoring;
 
 /// <summary>Reads system CPU, total system RAM, and application-specific RAM in MB.</summary>
 public sealed class WindowsSystemMetricsProvider : ISystemMetricsProvider

@@ -1,9 +1,9 @@
-namespace LightBrowser.Infrastructure;
+namespace SudyBrowser.Infrastructure;
 
 /// <summary>Well-known per-user locations used by the application.</summary>
 public static class AppDataPaths
 {
-    private const string AppFolderName = "LightBrowser";
+    private const string AppFolderName = "SudyBrowser";
 
     public static string Root { get; } = Path.Combine(
         Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),

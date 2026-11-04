@@ -1,4 +1,4 @@
-namespace LightBrowser.Core.Interfaces;
+namespace SudyBrowser.Core.Interfaces;
 
 public sealed class BrowserEngineUnavailableException : Exception
 {

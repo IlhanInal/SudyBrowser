@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightBrowser.App", "src\LightBrowser.App\LightBrowser.App.csproj", "{A76B1AE7-DA2E-4A01-B601-6FB98D89AE43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudyBrowser.App", "src\LightBrowser.App\LightBrowser.App.csproj", "{A76B1AE7-DA2E-4A01-B601-6FB98D89AE43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightBrowser.Core", "src\LightBrowser.Core\LightBrowser.Core.csproj", "{F3F16E05-74AB-4561-A99F-4003FD3412A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudyBrowser.Core", "src\LightBrowser.Core\LightBrowser.Core.csproj", "{F3F16E05-74AB-4561-A99F-4003FD3412A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightBrowser.Infrastructure", "src\LightBrowser.Infrastructure\LightBrowser.Infrastructure.csproj", "{3F0F328C-704F-4E9A-906C-C4ADFF21913A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudyBrowser.Infrastructure", "src\LightBrowser.Infrastructure\LightBrowser.Infrastructure.csproj", "{3F0F328C-704F-4E9A-906C-C4ADFF21913A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightBrowser.Tests", "tests\LightBrowser.Tests\LightBrowser.Tests.csproj", "{59DBE09C-5E54-4842-8113-266D8E6DDDA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudyBrowser.Tests", "tests\LightBrowser.Tests\LightBrowser.Tests.csproj", "{59DBE09C-5E54-4842-8113-266D8E6DDDA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

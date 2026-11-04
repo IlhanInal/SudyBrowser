@@ -1,9 +1,9 @@
 using System.Windows.Input;
 using System.Windows.Threading;
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.App.ViewModels;
+namespace SudyBrowser.App.ViewModels;
 
 /// <summary>Drives the top-left box: clock, RAM and CPU readouts, switched with the arrow buttons.</summary>
 public sealed class StatusViewModel : ObservableObject, IDisposable

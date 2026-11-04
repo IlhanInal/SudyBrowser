@@ -1,8 +1,8 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
-using LightBrowser.Core.Services;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
+using SudyBrowser.Core.Services;
 
-namespace LightBrowser.Tests;
+namespace SudyBrowser.Tests;
 
 public class RecentSitesTests
 {

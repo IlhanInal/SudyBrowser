@@ -1,6 +1,6 @@
 using System.Windows.Input;
 
-namespace LightBrowser.App.ViewModels;
+namespace SudyBrowser.App.ViewModels;
 
 /// <summary>Synchronous command. Re-evaluated through <see cref="CommandManager.RequerySuggested"/>.</summary>
 public sealed class RelayCommand : ICommand

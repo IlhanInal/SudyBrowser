@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace LightBrowser.App.ViewModels;
+namespace SudyBrowser.App.ViewModels;
 
 public abstract class ObservableObject : INotifyPropertyChanged
 {

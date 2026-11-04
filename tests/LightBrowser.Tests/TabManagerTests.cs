@@ -1,8 +1,8 @@
-using LightBrowser.Core.Models;
-using LightBrowser.Core.Services;
+using SudyBrowser.Core.Models;
+using SudyBrowser.Core.Services;
 using Microsoft.Extensions.Logging.Abstractions;
 
-namespace LightBrowser.Tests;
+namespace SudyBrowser.Tests;
 
 public class TabManagerTests
 {

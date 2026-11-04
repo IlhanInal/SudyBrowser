@@ -1,7 +1,7 @@
 using System.Text;
 using Microsoft.Extensions.Logging;
 
-namespace LightBrowser.Infrastructure.Logging;
+namespace SudyBrowser.Infrastructure.Logging;
 
 /// <summary>Minimal append-only file logger (one file per day). Logging never throws into the app.</summary>
 public sealed class FileLoggerProvider : ILoggerProvider
@@ -27,7 +27,7 @@ public sealed class FileLoggerProvider : ILoggerProvider
             lock (_gate)
             {
                 Directory.CreateDirectory(_directory);
-                var path = Path.Combine(_directory, $"lightbrowser-{DateTime.Now:yyyyMMdd}.log");
+                var path = Path.Combine(_directory, $"sudybrowser-{DateTime.Now:yyyyMMdd}.log");
                 File.AppendAllText(path, line + Environment.NewLine, Encoding.UTF8);
             }
         }

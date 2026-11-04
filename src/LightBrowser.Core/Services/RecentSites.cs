@@ -1,7 +1,7 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 
-namespace LightBrowser.Core.Services;
+namespace SudyBrowser.Core.Services;
 
 /// <summary>Keeps the last few distinct sites (by host) the user visited, most recent first.</summary>
 public sealed class RecentSites

@@ -1,4 +1,4 @@
-namespace LightBrowser.Core.Models;
+namespace SudyBrowser.Core.Models;
 
 /// <summary>System-wide and application resource usage sample.</summary>
 public sealed record SystemMetrics(

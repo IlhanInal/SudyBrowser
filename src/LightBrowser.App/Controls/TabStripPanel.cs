@@ -1,7 +1,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace LightBrowser.App.Controls;
+namespace SudyBrowser.App.Controls;
 
 /// <summary>
 /// Lays tabs out in one row with a fixed gap. Tabs are <see cref="MaxTabWidth"/> wide and shrink evenly

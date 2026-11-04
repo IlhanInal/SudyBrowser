@@ -1,10 +1,10 @@
-using LightBrowser.Core.Interfaces;
-using LightBrowser.Core.Models;
+using SudyBrowser.Core.Interfaces;
+using SudyBrowser.Core.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.Web.WebView2.Core;
 using WpfWebView2 = Microsoft.Web.WebView2.Wpf.WebView2;
 
-namespace LightBrowser.Infrastructure.WebView2;
+namespace SudyBrowser.Infrastructure.WebView2;
 
 /// <summary>
 /// <see cref="IWebViewHost"/> backed by a WPF WebView2 control that uses the shared environment.
@@ -32,6 +32,8 @@ public sealed class WebView2Host : IWebViewHost
     public NavigationState State { get; private set; } = NavigationState.Empty;
 
     public event EventHandler<NavigationState>? StateChanged;
+
+    public event EventHandler<IDownloadOperation>? DownloadStarted;
 
     public async Task NavigateAsync(Uri uri)
     {
@@ -79,6 +81,7 @@ public sealed class WebView2Host : IWebViewHost
             _core.DocumentTitleChanged -= OnCoreChanged;
             _core.HistoryChanged -= OnCoreChanged;
             _core.FaviconChanged -= OnCoreChanged;
+            _core.DownloadStarting -= OnDownloadStarting;
             _core.NewWindowRequested -= OnNewWindowRequested;
             _core.ProcessFailed -= OnProcessFailed;
             _core = null;
@@ -106,6 +109,7 @@ public sealed class WebView2Host : IWebViewHost
             _core.DocumentTitleChanged += OnCoreChanged;
             _core.HistoryChanged += OnCoreChanged;
             _core.FaviconChanged += OnCoreChanged;
+            _core.DownloadStarting += OnDownloadStarting;
             _core.NewWindowRequested += OnNewWindowRequested;
             _core.ProcessFailed += OnProcessFailed;
         }
@@ -134,6 +138,14 @@ public sealed class WebView2Host : IWebViewHost
     }
 
     private void OnCoreChanged(object? sender, object e) => Publish();
+
+    private void OnDownloadStarting(object? sender, CoreWebView2DownloadStartingEventArgs e)
+    {
+        // Hide WebView2's built-in download dialog; SudyBrowser uses its own lightweight downloads popup.
+        e.Handled = true;
+        var adapter = new WebView2DownloadOperation(e.DownloadOperation);
+        DownloadStarted?.Invoke(this, adapter);
+    }
 
     // Popups and target=_blank links are loaded in the same tab for now; multi-tab popups are future work.
     private void OnNewWindowRequested(object? sender, CoreWebView2NewWindowRequestedEventArgs e)

@@ -19,4 +19,16 @@
     <SolidColorBrush x:Key="TileHoverBrush" Color="#A6FFFFFF" />
     <SolidColorBrush x:Key="TileBorderBrush" Color="#59FFFFFF" />
     <SolidColorBrush x:Key="TileTextBrush" Color="#2B1B5C" />
+    <SolidColorBrush x:Key="SettingsCardBrush" Color="#F7F4FF" />
+    <SolidColorBrush x:Key="SettingsCardHoverBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SettingsShadowBrush" Color="#7254D8" />
+    <SolidColorBrush x:Key="SettingsIconCircleBrush" Color="#E6DDFF" />
+    <SolidColorBrush x:Key="SettingsCircleButtonBrush" Color="#6C50CE" />
+    <SolidColorBrush x:Key="SettingsCircleButtonGlyphBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="HistoryPillSideBrush" Color="#EFEAFF" />
+    <SolidColorBrush x:Key="HistorySearchBarBrush" Color="#9B82F0" />
+    <SolidColorBrush x:Key="HistorySearchTextBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="DangerButtonBrush" Color="#FF7D7D" />
+    <SolidColorBrush x:Key="DangerButtonHoverBrush" Color="#FF6B6B" />
+    <BitmapImage x:Key="HomeLogoSource" UriSource="pack://application:,,,/Resources/Icons/sudybrowserlogo_white.png" />
 </ResourceDictionary>

@@ -1,7 +1,7 @@
-<UserControl x:Class="LightBrowser.App.Views.TabStripView"
+<UserControl x:Class="SudyBrowser.App.Views.TabStripView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:controls="clr-namespace:LightBrowser.App.Controls"
+             xmlns:controls="clr-namespace:SudyBrowser.App.Controls"
              SizeChanged="OnSizeChanged">
     <Grid>
         <Grid.ColumnDefinitions>
